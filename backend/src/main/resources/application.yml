@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: physio-schedule
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
