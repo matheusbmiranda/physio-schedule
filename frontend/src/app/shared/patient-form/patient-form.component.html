@@ -1,0 +1,93 @@
+<form class="patient-form" [formGroup]="patientForm" (ngSubmit)="save.emit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome Completo *</mat-label>
+    <input matInput formControlName="nomeCompleto" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>CPF</mat-label>
+    <input matInput formControlName="cpf" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Telefone *</mat-label>
+    <input matInput formControlName="telefone" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Data de Nascimento</mat-label>
+    <input matInput appBirthDateMask #birthDateMask="birthDateMask" [matDatepicker]="picker" formControlName="dataNascimento" (dateChange)="birthDateMask.handleDateSelection($event.value)" />
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    @if (patientForm.controls.dataNascimento.hasError('birthDateInvalid')) {
+      <mat-error>Data de nascimento inválida.</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sexo</mat-label>
+    <mat-select formControlName="sexo">
+      @for (sexo of sexos; track sexo) {
+        <mat-option [value]="sexo">{{ sexo }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Convênio</mat-label>
+    <input matInput formControlName="convenio" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Profissão</mat-label>
+    <input matInput formControlName="profissao" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Rua</mat-label>
+    <input matInput formControlName="rua" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Número</mat-label>
+    <input matInput formControlName="numero" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Bairro</mat-label>
+    <input matInput formControlName="bairro" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Cidade</mat-label>
+    <input matInput formControlName="cidade" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Estado</mat-label>
+    <mat-select formControlName="estado">
+      @for (estado of estados; track estado) {
+        <mat-option [value]="estado">{{ estado }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>CEP</mat-label>
+    <input matInput formControlName="cep" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="observations-field">
+    <mat-label>Observações</mat-label>
+    <textarea matInput formControlName="observacoes" rows="4"></textarea>
+  </mat-form-field>
+
+  <div class="form-actions">
+    <button mat-flat-button type="submit" class="submit-button">{{ submitLabel }}</button>
+  </div>
+</form>

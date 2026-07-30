@@ -1,0 +1,25 @@
+<section class="page">
+  <h1>Atualizar Cadastro</h1>
+  <mat-card class="content-card search-card">
+    <mat-card-content>
+      <form class="search-form" (ngSubmit)="search()">
+        <mat-form-field appearance="outline">
+          <mat-label>Digite o nome do paciente</mat-label>
+          <input matInput [formControl]="searchControl" />
+        </mat-form-field>
+        <button mat-flat-button type="submit" class="search-button">
+          <mat-icon>search</mat-icon>
+          Buscar
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  @if (showPatientForm) {
+    <mat-card class="content-card form-card patient-result">
+      <mat-card-content>
+        <app-patient-form [patient]="patient" submitLabel="Salvar Alterações" (save)="save()"></app-patient-form>
+      </mat-card-content>
+    </mat-card>
+  }
+</section>

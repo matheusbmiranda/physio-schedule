@@ -1,0 +1,21 @@
+.app-toolbar {
+  align-items: center;
+  background-color: #1565c0;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+  position: relative;
+  z-index: 2;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.imrea-logo {
+  display: block;
+  height: 44px;
+  max-width: 280px;
+  object-fit: contain;
+}

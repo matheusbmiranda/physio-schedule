@@ -1,0 +1,29 @@
+.search-form {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+.search-form mat-form-field {
+  flex: 1;
+}
+
+.search-button {
+  background-color: #1565c0;
+  color: #fff;
+}
+
+.search-button mat-icon {
+  margin-right: 6px;
+}
+
+.patient-result {
+  margin-top: 24px;
+}
+
+@media (max-width: 640px) {
+  .search-form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

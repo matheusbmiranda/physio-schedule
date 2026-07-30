@@ -1,0 +1,53 @@
+html,
+body,
+app-root {
+  display: block;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.page {
+  max-width: 1120px;
+}
+
+.page h1 {
+  color: #263238;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.content-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+}
+
+.content-card mat-card-content {
+  color: #546e7a;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.form-card mat-card-content {
+  padding: 28px;
+}
+
+/* Remove completamente o estilo do autofill do Chrome */
+
+.mat-mdc-input-element:-webkit-autofill,
+.mat-mdc-input-element:-webkit-autofill:hover,
+.mat-mdc-input-element:-webkit-autofill:focus,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+}

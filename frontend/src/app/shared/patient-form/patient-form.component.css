@@ -1,0 +1,28 @@
+.patient-form {
+  display: grid;
+  gap: 4px 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.observations-field,
+.form-actions {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.submit-button {
+  background-color: #2e7d32;
+  color: #fff;
+  min-width: 180px;
+}
+
+@media (max-width: 640px) {
+  .patient-form {
+    grid-template-columns: 1fr;
+  }
+}
